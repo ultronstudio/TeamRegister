@@ -1,5 +1,7 @@
 # TeamRegister
 
+[![wakatime](https://wakatime.com/badge/user/bf7a188a-bb73-4aa0-af09-654269bec427/project/018c6ead-fc4b-4240-91d0-2b566bdffa3f.svg)](https://github.com/ultronstudio/TeamRegister)
+
 Stránka (šablona) pro registraci týmu do soutěží.
 
 ## Instalace na webový server
