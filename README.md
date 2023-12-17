@@ -26,7 +26,7 @@ Tento projekt je publikován pod [MIT licencí](http://opensource.org/licenses/M
 
 ## Přispěvatelé
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:START -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
