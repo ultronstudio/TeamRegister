@@ -19,4 +19,4 @@ SPOLECNOST="NějakáSpolečnost s.r.o."
 
 # Licence
 
-Tento projekt je licencován pod [MIT licencí](http://opensource.org/licenses/MIT)
+Tento projekt je publikován pod [MIT licencí](http://opensource.org/licenses/MIT)
