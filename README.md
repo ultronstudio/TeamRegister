@@ -24,6 +24,8 @@ SPOLECNOST="NějakáSpolečnost s.r.o."
 
 Tento projekt je publikován pod [MIT licencí](http://opensource.org/licenses/MIT)
 
+## Přispěvatelé
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
