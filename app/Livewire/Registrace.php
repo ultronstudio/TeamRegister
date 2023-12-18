@@ -13,20 +13,29 @@ class Registrace extends Component
     public $pocet;
     public $soutezici;
 
+    public $krokAktualni = 1;
+    public $krokyCelkem = 3;
+
     private $data = ['jmeno' => '', 'prijmeni' => '', 'datum' => '', 'kategorie' => ''];
 
     protected $rules = [
-        'nazev' => 'required',
-        'pocet' => 'required|min:1',
         'soutezici.*.jmeno' => 'required',
         'soutezici.*.prijmeni' => 'required',
         'soutezici.*.datum' => 'required',
         'soutezici.*.kategorie' => ''
     ];
 
-    protected $messages = [
+    protected $rulesTeam = [
+        'nazev' => 'required',
+        'pocet' => 'required|min:1'
+    ];
+
+    protected $messagesTeam = [
         'nazev' => 'Název je povinný',
-        'pocet' => 'Počet členů je povinný',
+        'pocet' => 'Počet členů je povinný'
+    ];
+
+    protected $messages = [
         'soutezici.*.jmeno' => 'Jméno je povinné',
         'soutezici.*.prijmeni' => 'Příjmení je povinné',
         'soutezici.*.datum' => 'Datum narození je povinné',
@@ -126,5 +135,35 @@ class Registrace extends Component
         while ($this->soutezici->count() > $this->pocet) {
             $this->smazatSouteziciho($this->soutezici->count() - 1);
         }
+    }
+
+    public function dalsiKrok()
+    {
+        $this->kontrola();
+        $this->krokAktualni++;
+    }
+
+    public function predchoziKrok()
+    {
+        $this->krokAktualni--;
+    }
+
+    private function kontrola()
+    {
+        if($this->krokAktualni == 1) {
+            $this->kontrola_Tym();
+        } elseif($this->krokAktualni == 2) {
+            $this->kontrola_Soutezici();
+        }
+    }
+
+    private function kontrola_Tym()
+    {
+        $this->validate($this->rulesTeam, $this->messagesTeam);
+    }
+
+    private function kontrola_Soutezici()
+    {
+        $this->validate($this->rules, $this->messages);
     }
 }
