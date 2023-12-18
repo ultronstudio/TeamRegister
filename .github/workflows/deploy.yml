@@ -4,11 +4,7 @@ name: Deploy
 # pull request events on the master branch
 on:
   push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    branches: [ master ]
       
 # Authenticate to the the server via ssh 
 # and run our deployment script 
@@ -16,12 +12,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd /var/www/html && ./.scripts/deploy.sh"
+          script: 
+            cd /var/www/ultronarmy_eu/ultron01/projekty/TeamRegister && ./.scripts/deploy.sh
